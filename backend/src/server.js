@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const routes = require("./routes");
 
@@ -15,7 +16,7 @@ mongoose.connect('mongodb+srv://migluuz:migluuz@curso-lx0rd.mongodb.net/test?ret
 // req.query acessar query params
 // req.params acessar route params
 // req.body acessar corpo da requisicao
-
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
